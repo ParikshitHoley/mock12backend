@@ -24,7 +24,7 @@ exports.signUp = async (req, res, next) => {
 
     }
     catch (err) {
-    console.log(err);
+    console.log(err.message);
     return res.status(500).send("Error");
   }
 }
@@ -55,7 +55,7 @@ exports.login = async (req, res, next) => {
     return res.status(500).send("Error");
   }
 
-    const token = jwt.sign({ id: user._id }, "adhjkadol")
+    const token = jwt.sign({ id: user._id }, "pavan")
     user.password = ""
    
    

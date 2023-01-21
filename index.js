@@ -3,6 +3,8 @@ const cors = require("cors")
 const dotenv = require("dotenv")
 const { connection } = require("./config/db.js")
 const { userRouter } = require("./routes/user.route")
+const { calculatorRouter } = require("./routes/calculator.route.js")
+
 
 
 dotenv.config()
@@ -13,9 +15,12 @@ app.use(cors())
 
 
 // routes
-app.use("/user",userRouter)
+app.use("/user", userRouter)
+app.use("/",calculatorRouter)
 
 
+
+ 
 
 const port = process.env.PORT || 3006
 
